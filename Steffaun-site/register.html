@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — SJ Tech</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/sj-tech-logo.png" alt="SJ Tech logo" class="brandLogo" />
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn" href="login.html">Sign in</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Create account</h2>
+        <p>password strength • validation</p>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column: span 7;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Register</h3>
+            <p class="small">Demo only — stored locally in your browser.</p>
+
+            <div id="regMsg" class="notice" style="margin-top:12px;">Use a strong password.</div>
+
+            <hr class="hr" />
+
+            <form id="registerForm">
+              <div>
+                <label for="regName">Name</label>
+                <input id="regName" autocomplete="name" required />
+              </div>
+
+              <div>
+                <label for="regEmail">Email</label>
+                <input id="regEmail" type="email" autocomplete="email" required />
+              </div>
+
+              <div>
+                <label for="regPassword">Password</label>
+                <input id="regPassword" type="password" autocomplete="new-password" required />
+              </div>
+
+              <div class="strength" aria-hidden="true"><div id="pwBar"></div></div>
+              <p class="small" style="margin:8px 0 0;">Strength: <span id="pwScore">Weak</span></p>
+
+              <div class="actions" style="margin-top:12px;">
+                <button class="btn primary" type="submit">Create →</button>
+                <a class="btn" href="login.html">Back to login</a>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <aside class="card" style="grid-column: span 5;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Password tips</h3>
+            <ul class="list">
+              <li><strong>8+ characters</strong> minimum</li>
+              <li><strong>Mix</strong> upper/lowercase</li>
+              <li><strong>Add</strong> numbers + symbols</li>
+            </ul>
+            <p class="small">Demo note: real apps never store passwords like this.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">Register</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/auth.js"></script>
+<div id="toast" class="toast" hidden></div>
+
+</body>
+</html>

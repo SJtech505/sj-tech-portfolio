@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Security Lab — SJ Tech</title>
+  <meta name="description" content="SJ Tech Security Lab: password strength, common risks, and safer practices." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo" aria-hidden="true"></span>
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn primary" href="projects.html">Back to Projects</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Security Lab: Password Basics</h2>
+        <p>strength • checks • safer habits</p>
+      </div>
+
+      <div class="grid">
+        <!-- Tool -->
+        <article class="card" style="grid-column: span 7;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Password Strength Checker</h3>
+            <p class="small">This is a learning tool. Nothing is sent anywhere — it runs only in your browser.</p>
+
+            <hr class="hr" />
+
+            <div>
+              <label for="pw">Try a password</label>
+              <input id="pw" type="password" placeholder="Type here…" autocomplete="new-password" />
+            </div>
+
+            <div class="krow" style="margin-top:12px; align-items:center;">
+              <label class="badge" style="cursor:pointer;">
+                <input id="showPw" type="checkbox" style="width:auto; margin-right:8px;">
+                Show password
+              </label>
+              <button class="miniBtn" id="genBtn" type="button">Generate strong password</button>
+              <button class="miniBtn" id="copyBtn" type="button">Copy</button>
+            </div>
+
+            <div style="height:12px;"></div>
+
+            <div class="strength" aria-hidden="true"><div id="bar"></div></div>
+            <div class="badgeRow" style="margin-top:10px;">
+              <span class="badge" id="rating">Rating: —</span>
+              <span class="badge" id="entropy">Est. strength: —</span>
+              <span class="badge" id="lengthBadge">Length: 0</span>
+            </div>
+
+            <hr class="hr" />
+
+            <h3 style="margin:0 0 8px;">Checks</h3>
+            <ul class="list" id="checks"></ul>
+
+            <p class="small" id="copyStatus" style="margin-top:10px;"></p>
+          </div>
+        </article>
+
+        <!-- Explainer -->
+        <aside class="card" style="grid-column: span 5;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Why it matters</h3>
+            <ul class="list">
+              <li><strong>Weak passwords</strong> are easy to guess or crack.</li>
+              <li><strong>Reused passwords</strong> turn 1 leak into multiple account takeovers.</li>
+              <li><strong>Length beats complexity</strong> — longer is usually stronger.</li>
+            </ul>
+
+            <div style="height:12px;"></div>
+
+            <h3 style="margin:0 0 8px;">Good habits</h3>
+            <ul class="list">
+              <li><strong>Use a password manager</strong> for unique passwords.</li>
+              <li><strong>Turn on 2FA</strong> (authenticator app is best).</li>
+              <li><strong>Avoid personal info</strong> (names, birthdays, phone #).</li>
+            </ul>
+
+            <div class="tags" style="margin-top:12px;">
+              <span class="tagChip g">Security mindset</span>
+              <span class="tagChip u">Input validation</span>
+              <span class="tagChip c">UX education</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Mini note -->
+        <article class="card mini">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Lab note</h3>
+            <p class="small">Next up: safe vs unsafe input (XSS awareness) + a phishing red-flags page.</p>
+          </div>
+        </article>
+
+        <!-- Mini note -->
+        <article class="card mini">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Portfolio value</h3>
+            <p class="small">Shows security awareness + front-end logic in one clean tool.</p>
+          </div>
+        </article>
+
+        <!-- Mini note -->
+        <article class="card mini">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Privacy</h3>
+            <p class="small">No network calls. Everything stays in the browser.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">Security Lab</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/security-lab.js"></script>
+</body>
+</html>

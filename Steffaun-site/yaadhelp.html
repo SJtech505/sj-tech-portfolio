@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YaadHelp Prototype — SJ Tech</title>
+  <meta name="description" content="YaadHelp prototype by SJ Tech — parish-based service finder for Jamaica." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/sj-tech-logo.png" alt="SJ Tech logo" class="brandLogo" />
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn primary" href="projects.html">Back to Projects</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>YaadHelp (Prototype)</h2>
+        <p>parish-based • filter • favorites</p>
+      </div>
+
+      <div class="grid">
+        <!-- FILTERS -->
+        <article class="card" style="grid-column: span 4;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Find a service</h3>
+            <p class="small">Prototype: front-end only. Data is sample.</p>
+
+            <div class="badgeRow" style="margin-top:0;">
+              <span class="badge" id="countBadge">0 results</span>
+              <span class="badge" id="favBadge">0 favorites</span>
+            </div>
+
+            <hr class="hr" />
+
+            <div>
+              <label for="q">Search</label>
+              <input id="q" placeholder="e.g., tow, nails, plumber..." />
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div>
+              <label for="parish">Parish</label>
+              <select id="parish">
+                <option value="all">All parishes</option>
+              </select>
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div>
+              <label for="category">Category</label>
+              <select id="category">
+                <option value="all">All categories</option>
+              </select>
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div class="badgeRow">
+              <label class="badge" style="cursor:pointer;">
+                <input id="onlyFav" type="checkbox" style="width:auto; margin-right:8px;">
+                Show favorites only
+              </label>
+            </div>
+
+            <div class="actions" style="margin-top:12px;">
+              <button class="btn primary" id="resetBtn" type="button">Reset</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- RESULTS -->
+        <article class="card" style="grid-column: span 8;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <div class="twoCol">
+              <div>
+                <h3 style="margin-bottom:6px;">Results</h3>
+                <p class="small" id="subtitle">Use filters to narrow down.</p>
+              </div>
+              <div style="display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap;">
+                <button class="btn" id="sortBtn" type="button">Sort: A → Z</button>
+                <button class="btn" id="seedBtn" type="button">Load sample set</button>
+              </div>
+            </div>
+
+            <hr class="hr" />
+
+            <div id="results" class="resultsGrid" aria-live="polite"></div>
+
+            <p class="small" id="emptyState" style="margin-top:12px; display:none;">
+              No matches. Try another parish/category or a shorter search.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">YaadHelp Prototype</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/yaadhelp.js"></script>
+</body>
+</html>

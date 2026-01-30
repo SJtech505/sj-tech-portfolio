@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TechPulse Dashboard — SJ Tech</title>
+
+<meta name="color-scheme" content="dark">
+<style>html,body{background:#05060c}</style>
+<link rel="icon" type="image/ico" href="assets/img/favicon.ico" />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/sj-tech-logo.png" class="brandLogo">
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+<section>
+<div class="container">
+<div class="sectionTitle">
+<h2>TechPulse Dashboard</h2>
+<p>live data • api integration</p>
+</div>
+
+<div class="grid">
+
+<article class="card">
+<div class="topbar"></div>
+<div class="pad">
+<h3>🌍 Country Search</h3>
+<input id="countryInput" placeholder="Enter country (e.g. Jamaica)">
+<button class="btn primary" id="countryBtn">Search</button>
+<div id="countryResult" class="small" style="margin-top:12px;"></div>
+</div>
+</article>
+
+<article class="card">
+<div class="topbar"></div>
+<div class="pad">
+<h3>🌡 Weather Lookup</h3>
+<input id="cityInput" placeholder="Enter city">
+<button class="btn primary" id="weatherBtn">Check</button>
+<div id="weatherResult" class="small" style="margin-top:12px;"></div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footerRow">
+<div class="small">© <span id="year"></span> SJ Tech</div>
+</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/techpulse.js"></script>
+</body>
+</html>

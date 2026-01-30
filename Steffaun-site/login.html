@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta name="color-scheme" content="dark">
+<style>
+  html, body { background:#05060c; }
+</style>
+<style>
+  * { transition: background-color .15s ease, color .15s ease; }
+</style>
+
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — SJ Tech</title>
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/sj-tech-logo.png" alt="SJ Tech logo" class="brandLogo" />
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn" href="register.html">Create account</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Login</h2>
+        <p>front-end auth demo</p>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column: span 7;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Welcome back</h3>
+            <p class="small">Demo only: user accounts are stored in your browser (localStorage).</p>
+
+            <div id="loginMsg" class="notice" style="margin-top:12px;">Use Register to create an account first.</div>
+
+            <hr class="hr" />
+
+            <form id="loginForm">
+              <div>
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" type="email" autocomplete="email" required />
+              </div>
+
+              <div>
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" type="password" autocomplete="current-password" required />
+              </div>
+
+              <label class="badge" style="cursor:pointer; display:inline-flex; align-items:center;">
+                <input id="remember" type="checkbox" style="width:auto; margin-right:8px;">
+                Remember me
+              </label>
+
+              <div class="actions" style="margin-top:12px;">
+                <button class="btn primary" type="submit">Sign in →</button>
+                <a class="btn" href="forgot.html">Forgot password</a>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <aside class="card" style="grid-column: span 5;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Why this matters</h3>
+            <ul class="list">
+              <li><strong>Validation:</strong> basic input checks</li>
+              <li><strong>Session:</strong> protected dashboard route</li>
+              <li><strong>UX:</strong> clear feedback + flow</li>
+            </ul>
+            <div class="tags">
+              <span class="tagChip u">JavaScript</span>
+              <span class="tagChip c">UI</span>
+              <span class="tagChip g">Security mindset</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">Login</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/auth.js"></script>
+<div id="toast" class="toast" hidden></div>
+
+</body>
+</html>

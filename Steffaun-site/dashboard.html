@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — SJ Tech</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+</head>
+
+<body data-page="dashboard">
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo" aria-hidden="true"></span>
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <button class="btn primary" id="logoutBtn" type="button">Logout</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Dashboard</h2>
+        <p>protected route • session demo</p>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column: span 5;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Profile</h3>
+            <ul class="list">
+              <li><strong>Name:</strong> <span id="who">—</span></li>
+              <li><strong>Email:</strong> <span id="whoEmail">—</span></li>
+              <li><strong>Session:</strong> Local demo</li>
+            </ul>
+            <div class="tags">
+              <span class="tagChip u">UI</span>
+              <span class="tagChip c">Auth demo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column: span 7;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Activity</h3>
+            <p class="small">Sample activity feed.</p>
+
+            <table class="table" aria-label="Activity table">
+              <thead>
+                <tr><th>Action</th><th>When</th><th>Status</th></tr>
+              </thead>
+              <tbody id="activityBody"></tbody>
+            </table>
+
+            <div style="height:12px;"></div>
+            <a class="btn" href="projects.html">Back to projects →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">Dashboard</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

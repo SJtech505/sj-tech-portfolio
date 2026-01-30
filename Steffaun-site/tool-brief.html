@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Brief Tool — SJ Tech</title>
+  <meta name="description" content="A multi-step project brief tool by SJ Tech. Generates a clean summary you can copy and send." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo" aria-hidden="true"></span>
+      <span>
+        <div class="title">SJ Tech</div>
+        <div class="tag">Front-End Development • Security-Minded Builds</div>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn primary" href="projects.html">Back to Projects</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Project Brief Tool</h2>
+        <p>multi-step • summary • copy</p>
+      </div>
+
+      <div class="grid">
+        <!-- FORM -->
+        <article class="card" style="grid-column: span 7;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Tell SJ Tech what you need</h3>
+            <p>Answer a few questions and get a clean summary you can copy and send.</p>
+
+            <div class="badgeRow" style="margin-top:0;">
+              <div class="progressWrap">
+  <div class="progressBar" id="progressBar"></div>
+</div>
+              <span class="badge" id="stepLabel">Step 1 of 3</span>
+              <span class="badge" id="statusLabel">autosave: on</span>
+            </div>
+
+            <hr class="hr" />
+
+            <form id="briefForm">
+              <!-- STEP 1 -->
+              <div class="step" data-step="1">
+                <div>
+                  <label for="name">Your name</label>
+                  <input id="name" name="name" autocomplete="name" placeholder="e.g., Keisha Brown" required />
+                </div>
+
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="e.g., keisha@email.com" required />
+                </div>
+
+                <div>
+                  <label for="type">Project type</label>
+                  <input id="type" name="type" placeholder="e.g., Portfolio site, Business landing page, Booking page" required />
+                </div>
+
+                <div class="actions">
+                  <button class="btn primary" type="button" id="next1">Next →</button>
+                </div>
+              </div>
+
+              <!-- STEP 2 -->
+              <div class="step" data-step="2" hidden>
+                <div>
+                  <label for="goal">Main goal</label>
+                  <input id="goal" name="goal" placeholder="e.g., Get more bookings / look professional / sell a service" required />
+                </div>
+
+                <div>
+                  <label for="pages">Pages needed</label>
+                  <input id="pages" name="pages" placeholder="e.g., Home, About, Services, Contact" required />
+                </div>
+
+                <div>
+                  <label for="features">Features</label>
+                  <input id="features" name="features" placeholder="e.g., Contact form, gallery, booking link, WhatsApp button" />
+                </div>
+
+                <div class="actions">
+                  <button class="btn" type="button" id="back2">← Back</button>
+                  <button class="btn primary" type="button" id="next2">Next →</button>
+                </div>
+              </div>
+
+              <!-- STEP 3 -->
+              <div class="step" data-step="3" hidden>
+                <div>
+                  <label for="style">Style/Vibe</label>
+                  <input id="style" name="style" placeholder="e.g., Dark neon tech / Clean minimal / Luxury" required />
+                </div>
+
+                <div>
+                  <label for="deadline">Deadline</label>
+                  <input id="deadline" name="deadline" placeholder="e.g., This weekend / Feb 10 / No rush" />
+                </div>
+
+                <div>
+                  <label for="notes">Extra notes</label>
+                  <textarea id="notes" name="notes" placeholder="Anything else SJ Tech should know?"></textarea>
+                </div>
+
+                <div class="actions">
+                  <button class="btn" type="button" id="back3">← Back</button>
+                  <button class="btn primary" type="submit">Generate Summary ✓</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <!-- SUMMARY -->
+        <aside class="card" style="grid-column: span 5;">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Generated summary</h3>
+            <p id="summaryHint" class="small">Fill the form, then click “Generate Summary”.</p>
+
+            <div style="height:10px;"></div>
+
+            <textarea id="summaryBox" readonly style="min-height: 280px;"></textarea>
+
+            <div class="actions" style="margin-top:12px;">
+              <button class="btn primary" id="copyBtn" type="button">Copy Summary</button>
+              <button class="btn" id="emailBtn" type="button">Email This</button>
+              <button class="btn" id="resetBtn" type="button">Reset</button>
+            </div>
+
+            <p class="small" id="copyStatus" style="margin-top:10px;"></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">Project Brief Tool</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/brief-tool.js"></script>
+</body>
+</html>

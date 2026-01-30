@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="dark">
+  <style>html, body { background:#05060c; }</style>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — SJ Tech</title>
+
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+  <meta property="og:title" content="SJ Tech — Front-End Web Developer" />
+  <meta property="og:description" content="Front-end portfolio hub with a cybersecurity growth path (Google certificates)." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+  <img src="assets/img/sj-tech-logo.png" alt="SJ Tech logo" class="brandLogo" />
+  <span>
+    <div class="title">SJ Tech</div>
+    <div class="tag">Front-End Development • Security-Minded Builds</div>
+  </span>
+</a>
+
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <div class="cta">
+  <a class="btn" href="assets/Steffaun_Johnson_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+</div>
+
+      
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Contact</h2>
+        <p>send a message • start a collab</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Send a message</h3>
+
+            <!-- Netlify Forms: works automatically once deployed -->
+            <form id="contactForm">
+
+
+
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div>
+                <label for="topic">Topic</label>
+                <input id="topic" name="topic" placeholder="Hiring / Collaboration / Question" />
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Tell me what you need, and I’ll respond."></textarea>
+              </div>
+
+              <button class="btn primary" type="submit">Send →</button>
+            </form>
+
+            <p class="small" style="margin-top:14px;">
+              Put all of the information or questions you want to ask in the box.
+            </p>
+          </div>
+        </article>
+
+        <aside class="card">
+          <div class="topbar" aria-hidden="true"></div>
+          <div class="pad">
+            <h3>Quick links</h3>
+            
+
+            <div class="tags" style="margin-top:12px; display:flex; flex-direction:column; gap:10px;">
+
+  <a class="btn" href="https://www.linkedin.com/in/steffaun-johnson-b0bb26388/" target="_blank" rel="noopener">
+    🔗 LinkedIn
+  </a>
+
+  <a class="btn" href="https://github.com/SJtech505" target="_blank" rel="noopener">
+    💻 GitHub
+  </a>
+
+  <a class="btn" href="mailto:steffaun.john23@gmail.com">
+    📧 Email Me
+  </a>
+
+  <a class="btn" href="https://wa.me/18768908873" target="_blank">
+    💬 WhatsApp
+  </a>
+
+  <a class="btn" href="https://www.instagram.com/sjtech.co1" target="_blank" rel="noopener">
+    📸 Instagram
+  </a>
+
+</div>
+
+
+            <div style="height:14px;"></div>
+            <a class="btn" href="projects.html" style="width:100%;">See Projects →</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech• Built by Steffauñ Johnson</div>
+    <div class="small">Web • UI • Security Growth</div>
+
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      topic: document.getElementById("topic").value.trim(),
+      message: document.getElementById("message").value.trim(),
+      page: location.pathname,
+      user_agent: navigator.userAgent
+    };
+
+    // basic guard
+    if (!payload.name || !payload.email || !payload.message) return;
+
+    const btn = form.querySelector('button[type="submit"]');
+    const old = btn.textContent;
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+
+    try {
+      const res = await fetch("/.netlify/functions/submit-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error(await res.text());
+
+      form.reset();
+      alert("Message sent ✓");
+    } catch (err) {
+      alert("Message failed. Try again.");
+      console.log(err);
+    } finally {
+      btn.textContent = old;
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

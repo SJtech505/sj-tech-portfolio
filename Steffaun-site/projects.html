@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta name="color-scheme" content="dark">
+<style>
+  html, body { background:#05060c; }
+</style>
+<style>
+  body { transition: background-color .15s ease, color .15s ease; }
+</style>
+
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — SJ Tech</title>
+
+ <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+  <meta property="og:title" content="Steffauñ Johnson — Front-End Web Developer" />
+<meta property="og:description" content="Front-end portfolio hub with a cybersecurity growth path (Google certificates)." />
+<meta property="og:type" content="website" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+  <img src="assets/img/sj-tech-logo.png" alt="SJ Tech logo" class="brandLogo" />
+  <span>
+    <div class="title">SJ Tech</div>
+    <div class="tag">Front-End Development • Security-Minded Builds</div>
+  </span>
+</a>
+
+
+    <nav class="navlinks" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="contact.html">Contact</a>
+      <a data-nav href="yaadhelp.html">YaadHelp</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn primary" href="contact.html">Work with me</a>
+      <a class="btn" href="assets/Steffaun_Johnson_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+
+
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section>
+  <div class="container">
+    <div class="sectionTitle">
+      <h2>Mini Case Studies</h2>
+      <p>problem → solution → result</p>
+    </div>
+
+    <div class="caseGrid">
+
+      <!-- TechPulse -->
+      <article class="card caseCard">
+        <div class="topbar" aria-hidden="true"></div>
+        <div class="pad">
+          <h3>TechPulse Dashboard</h3>
+          <p class="small">Live data dashboard using public APIs.</p>
+
+          <div class="caseMeta">
+            <span class="tagChip u">JavaScript</span>
+            <span class="tagChip c">APIs</span>
+            <span class="tagChip g">Async UI</span>
+          </div>
+
+          <div class="kv">
+            <div class="kvItem">
+              <h4>Problem</h4>
+              <p>Needed a clean way to display real-world data dynamically instead of static content.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Solution</h4>
+              <p>Built a dashboard that fetches country + weather data and renders results with loading + error handling.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Result</h4>
+              <p>Demonstrates API integration, async JavaScript, and data-driven UI updates.</p>
+            </div>
+          </div>
+
+          <div class="caseLinks">
+            <a class="btn primary" href="techpulse.html">Open →</a>
+            <a class="btn" href="projects.html#techpulse">Back to card</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Contact Backend -->
+      <article class="card caseCard">
+        <div class="topbar" aria-hidden="true"></div>
+        <div class="pad">
+          <h3>Serverless Contact (Supabase)</h3>
+          <p class="small">Contact messages stored in a real database.</p>
+
+          <div class="caseMeta">
+            <span class="tagChip c">Netlify Functions</span>
+            <span class="tagChip u">Supabase</span>
+            <span class="tagChip g">Security</span>
+          </div>
+
+          <div class="kv">
+            <div class="kvItem">
+              <h4>Problem</h4>
+              <p>Needed a reliable way to capture inquiries with real persistence, not just static forms.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Solution</h4>
+              <p>Created a Netlify serverless function that inserts contact submissions into Supabase (Postgres).</p>
+            </div>
+            <div class="kvItem">
+              <h4>Result</h4>
+              <p>Demonstrates modern backend flow: Frontend → Serverless → Database with insert-only policy.</p>
+            </div>
+          </div>
+
+          <div class="caseLinks">
+            <a class="btn primary" href="contact.html">Open →</a>
+            <a class="btn" href="contact.html">Test form</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Auth -->
+      <article class="card caseCard">
+        <div class="topbar" aria-hidden="true"></div>
+        <div class="pad">
+          <h3>Auth UI + Protected Dashboard</h3>
+          <p class="small">A realistic login flow with a gated dashboard (front-end demo).</p>
+
+          <div class="caseMeta">
+            <span class="tagChip u">JavaScript</span>
+            <span class="tagChip c">UX</span>
+            <span class="tagChip g">Security mindset</span>
+          </div>
+
+          <div class="kv">
+            <div class="kvItem">
+              <h4>Problem</h4>
+              <p>Needed a clean auth flow to demonstrate user journeys and protected routes.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Solution</h4>
+              <p>Built login/register/forgot pages, password strength checks, and a dashboard guard using localStorage session.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Result</h4>
+              <p>Demonstrates form validation, state handling, and UX patterns used in real apps.</p>
+            </div>
+          </div>
+
+          <div class="caseLinks">
+            <a class="btn primary" href="login.html">Open →</a>
+            <a class="btn" href="dashboard.html">Dashboard</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Security Lab -->
+      <article class="card caseCard">
+        <div class="topbar" aria-hidden="true"></div>
+        <div class="pad">
+          <h3>Security Lab: Password Basics</h3>
+          <p class="small">Interactive security education tool.</p>
+
+          <div class="caseMeta">
+            <span class="tagChip g">Security</span>
+            <span class="tagChip u">JavaScript</span>
+            <span class="tagChip c">UX education</span>
+          </div>
+
+          <div class="kv">
+            <div class="kvItem">
+              <h4>Problem</h4>
+              <p>Wanted a practical way to show security awareness and safe user guidance.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Solution</h4>
+              <p>Built a password checker with strength estimate, rules checks, and a strong-password generator.</p>
+            </div>
+            <div class="kvItem">
+              <h4>Result</h4>
+              <p>Demonstrates security-minded front-end logic and user-first explanations.</p>
+            </div>
+          </div>
+
+          <div class="caseLinks">
+            <a class="btn primary" href="security-lab.html">Open →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footerRow">
+    <div class="small">© <span id="year"></span> SJ Tech • Built by Steffauñ Johnson</div>
+    <div class="small">Web • UI • Security Growth</div>
+    <div class="small">Projects</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
